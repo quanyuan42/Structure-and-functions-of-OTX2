@@ -1,0 +1,4 @@
+fasta format.
+L-INS-i
+OTX2-orthologousprotein.faa > OTX2-aligned
+phylip forat / input order

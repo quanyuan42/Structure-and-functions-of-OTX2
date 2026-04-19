@@ -1,0 +1,1 @@
+bin\iqtree -s OTX2-aligned.phy
