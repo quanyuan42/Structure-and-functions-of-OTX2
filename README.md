@@ -1,2 +1,15 @@
-# Structure-and-functions-of-OTX2
-pipeline of analysis structure and functions of mouse OTX2
+## Structure-and-functions-of-OTX2
+Pipeline of analysis structure and functions of mouse OTX2.
+# Preparation
+The main software of the pipeline contains `IQtree`,`mafft`,`MACS` that can be downloaded on https://github.com/iqtree/iqtree3,https://github.com/GSLBiotech/mafft and https://github.com/macs3-project/MACS.
+The reference genome contains [GRCm39](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/),the `.fastq` file [SRR10172882](https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR10172882) and [SRR10172850](https://trace.ncbi.nlm.nih.gov/Traces/index.html?run=SRR10172850) obtained via `SRA Toolkit`.
+# Highly conserved domain of OTX2
+Multiple sequence alignment software `MAFFT` L-INS-i algorithm are used for finding vertebrates orthologous OTX2 conserved amino acid sequences.
+# Secondary and tertiary structure of conserved region
+Secondery structure of conserved region is predicted by [PDB](https://www.rcsb.org/),the mouse OTX2 homeodomain presented on [iCn3D](https://www.ncbi.nlm.nih.gov/Structure/icn3d).
+# OTX2 orthologs
+IQtree was used to Construct a NJ-tree to visualize the distance of different vertebrates.
+# Binding motif of OTX2
+Peak-calling agorithm of `MACS` used for calling peaks of `SRR10172882` vs `SRR10172850`,the motif discovered by webpage [MEME](https://meme-suite.org/meme/doc/meme.html?man_type=web).
+# GO enrichment analysis
+The binding genes are analyzed on webpage [DAVID](https://davidbioinformatics.nih.gov/workspace.html).
