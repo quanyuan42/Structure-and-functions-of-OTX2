@@ -10,13 +10,30 @@ Secondery structure of conserved region is predicted by [PDB](https://www.rcsb.o
 # OTX2 orthologs
 `IQtree` was used to Construct a NJ-tree to visualize the distance of different vertebrates.
 # Sequence alignment
-`SRR10172882` and `SRR10172850` aligned to mouse reference genome [GRCm39]([GRCm39](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/) by alignment software [bowtie2](https://github.com/BenLangmead/bowtie2).
+`SRR10172882` and `SRR10172850` aligned to mouse reference genome [GRCm39]((https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/) by alignment software [bowtie2](https://github.com/BenLangmead/bowtie2).
 ```
 conda install -y bowtie2
 bowtie2-build GRCm39.fa ./index
-bowtie2 -p 10 -x GRCm39.fa -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > output.bam
+bowtie2 -p 10 -x ./index -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > output.bam
 ```
 # Binding motif of OTX2
 Peak-calling agorithm of `MACS` used for calling peaks of `SRR10172882` vs `SRR10172850`,the motif discovered by webpage [MEME](https://meme-suite.org/meme/doc/meme.html?man_type=web).
+# differential analysis
+GEO data minning `GSE11582838`,differential expressing gene analysis by R package `edgR`,data visualize by R package `ggplot2`.
+```
+if(F){
+  library(GEOquery)
+  gset <- getGEO('GSE11582838', destdir=".",
+                 AnnotGPL = F,
+                 getGPL = F)
+  save(gset,'GSE11582838.gset.Rdata')
+}
+load('GSE11582838_eSet.Rdata')
+b = eSet[[1]] 
+raw_exprSet=exprs(b) 
+group_list=c(rep('control',3),rep('case',3))
+save(raw_exprSet,group_list,
+     file='GSE11582838_raw_exprSet.Rdata')
+```
 # GO enrichment analysis
 The binding genes are analyzed on webpage [DAVID](https://davidbioinformatics.nih.gov/workspace.html).
