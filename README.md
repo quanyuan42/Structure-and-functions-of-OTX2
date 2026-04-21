@@ -10,7 +10,7 @@ Secondery structure of conserved region is predicted by [PDB](https://www.rcsb.o
 # OTX2 orthologs
 `IQtree` was used to Construct a NJ-tree to visualize the distance of different vertebrates.
 # Sequence alignment
-`SRR10172882` and `SRR10172850` aligned to mouse reference genome [GRCm39]((https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/) by alignment software [bowtie2](https://github.com/BenLangmead/bowtie2).
+`SRR10172882` and `SRR10172850` aligned to mouse reference genome [GRCm39](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/) by alignment software [bowtie2](https://github.com/BenLangmead/bowtie2).
 ```
 conda install -y bowtie2
 bowtie2-build GRCm39.fa ./index
