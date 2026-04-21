@@ -19,7 +19,7 @@ bowtie2 -p 10 -x ./index -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > S
 ```
 # Binding motif of OTX2
 Peak-calling agorithm of `MACS` used for calling peaks of `SRR10172882` vs `SRR10172850`,the motif discovered by webpage [MEME](https://meme-suite.org/meme/doc/meme.html?man_type=web).
-# differential analysis
+# Differential analysis
 GEO data minning `GSE11582838`,differential expressing gene analysis by R package `edgR`,data visualize by R package `ggplot2`.
 ```
 if(F){
@@ -36,5 +36,5 @@ group_list=c(rep('control',3),rep('case',3))
 save(raw_exprSet,group_list,
      file='GSE11582838_raw_exprSet.Rdata')
 ```
-# GO enrichment analysis
-The binding genes are analyzed on webpage [DAVID](https://davidbioinformatics.nih.gov/workspace.html).
+# GO and KEGG enrichment analysis
+The binding genes are analyzed on webpage [DAVID](https://davidbioinformatics.nih.gov/workspace.html) and [KEGG](https://www.kegg.jp/kegg/ko.html),the genes are annotated by `blast` in `GO` and `KEGG` database.
