@@ -8,7 +8,14 @@ Multiple sequence alignment software `MAFFT` L-INS-i algorithm are used for find
 # Secondary and tertiary structure of conserved region
 Secondery structure of conserved region is predicted by [PDB](https://www.rcsb.org/),the mouse OTX2 homeodomain presented on [iCn3D](https://www.ncbi.nlm.nih.gov/Structure/icn3d).
 # OTX2 orthologs
-IQtree was used to Construct a NJ-tree to visualize the distance of different vertebrates.
+`IQtree` was used to Construct a NJ-tree to visualize the distance of different vertebrates.
+# Sequence alignment
+`SRR10172882` and `SRR10172850` aligned to mouse reference genome [GRCm39]([GRCm39](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001635.27/) by alignment software [bowtie2](https://github.com/BenLangmead/bowtie2).
+```
+conda install -y bowtie2
+bowtie2-build GRCm39.fa ./index
+bowtie2 -p 10 -x GRCm39.fa -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > output.bam
+```
 # Binding motif of OTX2
 Peak-calling agorithm of `MACS` used for calling peaks of `SRR10172882` vs `SRR10172850`,the motif discovered by webpage [MEME](https://meme-suite.org/meme/doc/meme.html?man_type=web).
 # GO enrichment analysis
