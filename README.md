@@ -14,7 +14,8 @@ Secondery structure of conserved region is predicted by [PDB](https://www.rcsb.o
 ```
 conda install -y bowtie2
 bowtie2-build GRCm39.fa ./index
-bowtie2 -p 10 -x ./index -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > output.bam
+bowtie2 -p 10 -x ./index -U SRR10172882.fq | samtools sort -O bam -@ 10 -o - > SRR10172882.bam
+bowtie2 -p 10 -x ./index -U SRR10172850.fq | samtools sort -O bam -@ 10 -o - > SRR10172850.bam
 ```
 # Binding motif of OTX2
 Peak-calling agorithm of `MACS` used for calling peaks of `SRR10172882` vs `SRR10172850`,the motif discovered by webpage [MEME](https://meme-suite.org/meme/doc/meme.html?man_type=web).
